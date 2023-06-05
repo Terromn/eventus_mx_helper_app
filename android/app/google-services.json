@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "865650290885",
+    "firebase_url": "https://clever-abbey-384113-default-rtdb.firebaseio.com",
+    "project_id": "clever-abbey-384113",
+    "storage_bucket": "clever-abbey-384113.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865650290885:android:97178d321d4afb63c200ac",
+        "android_client_info": {
+          "package_name": "com.example.eventus_mx_helper_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865650290885-clkt01jmqsgs8q97o8shi7t2lfhrq1bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmsdnjN7A8Ez6CwcOsQTsBEB-9uL4hhRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865650290885-clkt01jmqsgs8q97o8shi7t2lfhrq1bh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "865650290885-t1bqnjuhh9n1l72tjli28njjltpk5fnm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eventus"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
