@@ -1,3 +1,4 @@
+import 'package:eventus_mx_helper_app/screens/scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,11 +18,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: 'Eventus Helper App',
-      home: MyHomePage(title: 'Eventus Helper App'),
+      home: const MyHomePage(title: 'Eventus Helper App'),
       debugShowCheckedModeBanner: false,
-    );
+      theme:  ThemeData(
+        snackBarTheme: const SnackBarThemeData(
+          backgroundColor: Color(0xFF5400DA), // Set your desired snackbar color here
+        ),
+    ));
   }
 }
 
@@ -90,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: GestureDetector(
                           onTap: () {
                             showModalBottomSheet(
-
                               context: context,
                               builder: (BuildContext context) {
                                 return Container(
@@ -147,7 +151,22 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: () {
+                if (selectedEventName != null) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ScanScreen(),
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Elija Un Evento'),
+                    ),
+                  );
+                }
+              },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(
                   const EdgeInsets.all(12),
@@ -158,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Color(0xFF5400DA)),
+                    MaterialStateProperty.all<Color>(const Color(0xFF5400DA)),
               ),
               child: const Text(
                 'Scanear Codigos',
